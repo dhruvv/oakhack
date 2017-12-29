@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         URL endpoint = null;
-                        try {
-                            endpoint = new URL("http://192.168.0.5:5000/");
+                   -0     try {
+                            endpoint = new URL("http://mralpaca.pythonanywhere.com/");
                         } catch (MalformedURLException e) {
                             e.printStackTrace();
                             //json_data.setText((CharSequence) e);
@@ -68,22 +68,25 @@ public class MainActivity extends AppCompatActivity {
                                     JsonReader jsonReader = new JsonReader(responseBodyReader);
                                     jsonReader.beginObject();
                                     while (jsonReader.hasNext()){
-                                        final String key = jsonReader.nextName();
+                                        String key = jsonReader.nextName();
                                         if (key.equals("Tanush")){
                                            final String jsonStr;
                                             jsonStr = jsonReader.nextString();
                                             System.out.println(jsonStr);
+                                            final String print_key = key;
                                             //System.out.println(key);
                                             runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run(){
                                                     json_data.setText(jsonStr);
-                                                    json_key.setText(key);
+                                                    json_key.setText(print_key);
 
                                                 }
                                             });
 
-
+                                            break;
+                                        }else{
+                                            jsonReader.skipValue();
                                         }
                                     }
 

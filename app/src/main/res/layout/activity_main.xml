@@ -36,12 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Radnom TextView"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="377dp"
         android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@+id/json_data"
+        app:layout_constraintBottom_toTopOf="@+id/json_data"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="-70dp" />
 
 
 </android.support.constraint.ConstraintLayout>
